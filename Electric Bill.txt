@@ -1,0 +1,19 @@
+#Program to calculate EB bill
+units = int(input("Enter the number of units consumed:"))
+if units<=30:
+    pay=units*3.75
+elif units>=31 and units<=100:
+    pay=(30*3.75)+(units-30)*5.20
+elif units>=101 and units<=200:
+    pay=(30*3.75)+(100-30)*5.20+(units-100)*6.75
+else:
+    pay=(30*3.75)+(100-30)*5.20+(200-100)*6.75+(units-200)*7.8
+extra = 5/100*pay
+total_bill = 60+pay+extra
+print("Units per month          :%12.2f"%units)
+print("Total units consumed cost:%12.2f"%pay)
+print("Electricity tax(5percent):%12.2f"%extra)
+print("Fixed charges            :%12.2f"%60)
+print("                          ------------")
+print("Total charge             :%12.2f"%total_bill)
+print("                          ------------")
